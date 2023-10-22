@@ -36,9 +36,9 @@ while turns > 0:
     attempts += guess
     if guess not in word:
         turns -= 1
-        print("Wrong!")
+        print("Nope!")
         print("You have", + turns, 'more guesses')
 
         if turns == 0:
 
-            print("You Lose :(")
+            print("You just died:) RIP!")
