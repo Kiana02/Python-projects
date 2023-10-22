@@ -1,4 +1,5 @@
 import time
+import random
 
 user = input("Hey! what's your name? ")
 print("Hello, " + user, "let's play hangman!")
@@ -10,7 +11,8 @@ print("Make a guess: ")
 
 time.sleep(0.5)
 
-word = ("elephant")
+word = random.choice(("banana", "secret", "firefighter", "elephant", "southeast", "california", "caramel", "zucchini", "pizza", "cardiovascular", "lamborghini"))
+print(word)
 
 attempts = ''
 
@@ -22,11 +24,11 @@ while turns > 0:
 
         if char in attempts:
 
-            print(char, end=""),
+            print(char, end=" "),
 
         else:
 
-            print("_", end=""),
+            print("_", end=" "),
             fail += 1
 
     if fail == 0:
@@ -36,9 +38,9 @@ while turns > 0:
     attempts += guess
     if guess not in word:
         turns -= 1
-        print("Nope!")
+        print("nope!")
         print("You have", + turns, 'more guesses')
 
         if turns == 0:
 
-            print("You just died:) RIP!")
+            print("You just died! RIP")
